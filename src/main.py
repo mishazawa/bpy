@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import bpy
+
 
 app = FastAPI()
 
@@ -18,4 +20,4 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
-    return {}
+    return {"version": bpy.app.version_string}

@@ -1,11 +1,10 @@
 services:
   app:
     build: .
-    container_name: bpy_build
-    # command: uvicorn src.main:app --host 0.0.0.0 --port 80 --reload
-    # command: python3 -c "import bpy;print(dir(bpy.types));print(bpy.app.version_string);"
-    # command: python3 -c "import sys;print(sys.version_info);"
-    command: sleep 100
+    container_name: bpy_api
+    command: uvicorn src.main:app --host 0.0.0.0 --port 80 --reload
+    # command: python3 -c "import bpy;"
+    # command: pip debug --verbose
     ports:
       - 80:80
     volumes:
