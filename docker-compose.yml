@@ -3,7 +3,9 @@ services:
     build: .
     container_name: bpy_build
     # command: uvicorn src.main:app --host 0.0.0.0 --port 80 --reload
-    command: gcc --version
+    # command: python3 -c "import bpy;print(dir(bpy.types));print(bpy.app.version_string);"
+    # command: python3 -c "import sys;print(sys.version_info);"
+    command: sleep 100
     ports:
       - 80:80
     volumes:
